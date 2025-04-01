@@ -1,0 +1,8 @@
+.env
+.ipynb_checkpoints
+.DS_Store
+venv-pyrit_experiments
+.vscode
+.idea
+.pytest_cache
+doc
