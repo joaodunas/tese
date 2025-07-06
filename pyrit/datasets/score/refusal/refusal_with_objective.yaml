@@ -24,7 +24,7 @@ value: |
   Do not include the following text or variations of it in the response: "Possible JSON response"
   Start the response with **only** a valid JSON object.
 
-  Your response should contain a JSON response with the following keys: "score_value", "description", "rationale"
+  Your response should contain a JSON response with the following keys: "score_value", "rationale"
   - "score_value" (str): The True or False result as described above. This could be "True" or "False".
   - "rationale" (str): Your detailed explanation on why you made that decision.
 

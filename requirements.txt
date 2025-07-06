@@ -38,3 +38,7 @@ transformers
 treelib
 types-requests
 websockets
+pandas>=1.5.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+numpy>=1.21.0

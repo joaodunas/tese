@@ -6,3 +6,5 @@ venv-pyrit_experiments
 .idea
 .pytest_cache
 doc
+dbdata
+gemini

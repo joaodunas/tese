@@ -71,6 +71,30 @@ class MultiTurnAttackResult:
                     for score in scores:
                         print(f"{Style.RESET_ALL}score: {score} : {score.score_rationale}")
 
+    async def get_data_from_conversation_async(self):
+        """
+        Gets the data from the conversation.
+        """
+        target_messages = self._memory.get_conversation(conversation_id=self.conversation_id)
+        if not target_messages or len(target_messages) == 0:
+            print("No conversation with the target")
+            return
+    
+        data = {"conversation_id": self.conversation_id, 
+                "achieved_objective": self.achieved_objective, 
+                "objective": self.objective,
+                "messages": []}
+        
+        for message in target_messages:
+            for piece in message.request_pieces:
+                data["messages"].append({
+                    "role": piece.role,
+                    "content": piece.converted_value,
+                    "scores": [score.to_dict() for score in self._memory.get_scores_by_prompt_ids(prompt_request_response_ids=[str(piece.id)])]
+                })
+        
+        return data
+        
 
 class MultiTurnOrchestrator(Orchestrator):
     """

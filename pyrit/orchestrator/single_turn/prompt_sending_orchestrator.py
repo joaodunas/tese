@@ -211,7 +211,7 @@ class PromptSendingOrchestrator(Orchestrator):
             conversations_json[message.conversation_id][str(message.id)] = {
                 "role": message.role,
                 "converted_value": message.converted_value,
-                "scores": [score.to_dict() for score in message.scores]
+                "scores": [score.to_dict() for score in message.scores],
             }
         with open(file_path, "w") as f:
             json.dump(conversations_json, f)

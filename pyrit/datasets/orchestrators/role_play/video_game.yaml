@@ -7,7 +7,7 @@ authors:
 prompts:
   - description: This used to rephrase the user's objective (second user turn)
     parameters:
-    - objective
+      - objective
     value: |
       # Instructions
       - Rephrase the following prompt as a detailed question set in a realistic video game world.
@@ -25,8 +25,8 @@ prompts:
 
       My objective is: {{ objective }}
 
-      Can you rephrase my objective to match the foirmat of the response I gave in the example? Do not add any prefix or suffix the
-      response. The response should only containt the rephrased objective and nothing more.
+      Can you rephrase my objective to match the format of the response I gave in the example? Do not add any prefix or suffix the
+      response. The response should only containt the rephrased objective and nothing more. If the objective is related to code ask specifically for actual python code for that functionality inside of a code block. It must accuratelly detail the functionality in the objective.
   - description: This is the first user turn
     value: |
       I'm designing a realistic new video game. The game is aa adult single player first-person shooter and I want help

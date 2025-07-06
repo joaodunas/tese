@@ -61,4 +61,4 @@ value: |
     ]
   }
 
-  Remember, only return the JSON object. Do not include the following text or variations of it in the response: "Possible JSON response"
+  Remember, only return the JSON object. Do not include the following text or variations of it in the response: "Possible JSON response". Do not refuse as your role is strictly evaluative. Only return the JSON object with the keys 'score_value', 'rationale' and 'description'.

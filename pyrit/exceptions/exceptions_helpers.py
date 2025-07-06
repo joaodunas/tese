@@ -106,3 +106,20 @@ def remove_markdown_json(response_msg: str) -> str:
             return response_msg
         except json.JSONDecodeError:
             return "Invalid JSON response: {}".format(response_msg)
+        
+def extract_json_from_response(response_msg: str) -> str:
+    """
+    Checks if the response message contains JSON and extracts it.
+
+    Args:
+        response_msg (str): The response message to check.
+
+    Returns:
+        str: The response message with the JSON extracted.
+    """
+
+    try:
+        extracted_json = extract_json_from_string(response_msg)
+        return extracted_json
+    except (json.JSONDecodeError, IndexError):
+        return None
